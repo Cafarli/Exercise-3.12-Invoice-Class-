@@ -6,6 +6,13 @@ package InvoiceTest;
      private int quantity;
      private double price;
      
+     public Invoice(String partnumber, String description, int quantity, double price){
+         this.partnumber=partnumber;
+         this.description=description;
+         this.quantity=quantity;
+         this.price=price;
+     }
+  
      public void setPartnumber(String partnumber){
          this.partnumber=partnumber;
      }
