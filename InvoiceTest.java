@@ -2,38 +2,18 @@ package InvoiceTest;
 import java.util.Scanner;
 
 public class InvoiceTest {
-
     public static void main(String[] args) {
-        Scanner input =new Scanner(System.in);
         
-        Invoice myInvoice = new Invoice();
         
-        System.out.println("Enter a part number : ");
-        String mypartnumber = input.next();
-        myInvoice.setPartnumber(mypartnumber);
-        System.out.println(); 
+        Invoice Invoice1 = new Invoice("I000001", "Part Number 1", 5, 6.78);
+        Invoice Invoice2 = new Invoice("I000002", "Part Number 2", 12, 9.56);
         
-        System.out.println("Enter a part description : ");
-        String mydescription = input.next();
-        myInvoice.setDescription(mydescription);
-        System.out.println(); 
-        
-        System.out.println("Enter a quantity of the item being purchased : ");
-        int myquantity=input.nextInt();
-        myInvoice.setQuantity(myquantity);
-        System.out.println(); 
-
-        System.out.println("Enter a price per item : ");
-        double myprice = input.nextDouble();
-        myInvoice.setPrice(myprice);
-        System.out.println(); 
-        
-        System.out.println("Quantity : "+myInvoice.getQuantity());
-        System.out.println("Price : "+myInvoice.getPrice());
-        System.out.println("Description : "+myInvoice.getDescription());
-        System.out.println("Part number : "+myInvoice.getPartnumber());
-        
-        getInvoiceAmount(myInvoice.getQuantity(),myInvoice.getPrice());
+        System.out.printf("Invoice’s capabilities: partnumber: %s\n,  description: %s\n,  quantity: %s\n,  price: %s\n",
+                Invoice1.getPartnumber(), Invoice1.getDescription(), Invoice1.getQuantity(), Invoice1.getPrice());
+        getInvoiceAmount(Invoice1.getQuantity(),Invoice1.getPrice());
+        System.out.printf("Invoice’s capabilities: partnumber: %s\n,  description: %s\n,  quantity: %s\n,  price: %s\n",
+                Invoice2.getPartnumber(), Invoice2.getDescription(), Invoice2.getQuantity(), Invoice2.getPrice());
+        getInvoiceAmount(Invoice2.getQuantity(),Invoice2.getPrice());
         
     }
         private static void getInvoiceAmount(int quantitynum,double value){
