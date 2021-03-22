@@ -1,7 +1,7 @@
 package InvoiceTest;
 
 
- class Invoice {
+class Invoice {
      private String partnumber, description;
      private int quantity;
      private double price;
@@ -12,7 +12,7 @@ package InvoiceTest;
          this.quantity=quantity;
          this.price=price;
      }
-  
+     
      public void setPartnumber(String partnumber){
          this.partnumber=partnumber;
      }
@@ -41,7 +41,7 @@ package InvoiceTest;
          if(price>0){
              this.price=price;
          }
-         if(price<0){
+         else{
              price=0.0;
              this.price=price;
          }
@@ -51,3 +51,5 @@ package InvoiceTest;
      }
 
     }
+
+
